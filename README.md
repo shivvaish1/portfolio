@@ -32,7 +32,7 @@ A modern, responsive portfolio website built with React.js. Features a clean dar
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/shivvaish1/portfolio.git
 cd portfolio
 ```
 
@@ -92,7 +92,7 @@ The color scheme can be modified in `src/App.css`:
 In `package.json`, update the homepage field with your GitHub username:
 
 ```json
-"homepage": "https://yourusername.github.io/portfolio"
+"homepage": "https://shivvaish.tech"
 ```
 
 ### Step 2: Create GitHub Repository
@@ -105,7 +105,7 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/yourusername/portfolio.git
+git remote add origin https://github.com/shivvaish1/portfolio.git
 git push -u origin main
 ```
 
@@ -129,7 +129,7 @@ This will:
 3. Under "Source", select `gh-pages` branch
 4. Click Save
 
-Your portfolio will be live at: `https://yourusername.github.io/portfolio`
+Your portfolio will be live at: `https://shivvaish.tech`
 
 ## Adding Your Profile Picture
 
@@ -152,9 +152,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-- Email: hello@example.com
+- GitHub: [@shivvaish1](https://github.com/shivvaish1)
+- LinkedIn: [Shiv](https://linkedin.com/in/)
+- Email: shivvaish05@gmail.com
 
 ---
 

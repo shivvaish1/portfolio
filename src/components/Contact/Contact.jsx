@@ -133,7 +133,7 @@ const Contact = () => {
               <FaMapMarkerAlt className="info-icon" />
               <div>
                 <h4>Location</h4>
-                <p>Your City, Country</p>
+                <p>Meerut, India</p>
               </div>
             </div>
             <div className="social-section">
