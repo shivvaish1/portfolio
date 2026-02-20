@@ -1,4 +1,5 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -9,16 +10,28 @@ import Footer from './components/Footer/Footer';
 import Background from './components/Background/Background';
 import './App.css';
 
+const Home = () => (
+  <>
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Contact />
+  </>
+);
+
 function App() {
   return (
     <div className="App">
       <Background />
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
     </div>
   );

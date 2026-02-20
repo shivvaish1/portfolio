@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
@@ -15,10 +15,10 @@ const Hero = () => {
           Passionate about clean code, system design, and creating high-performance applications.
         </p>
         <div className="hero-buttons">
-          <Link to="projects" smooth={true} duration={500} offset={-70} className="btn btn-primary">
+          <Link to="/projects" className="btn btn-primary">
             View My Work
           </Link>
-          <Link to="contact" smooth={true} duration={500} offset={-70} className="btn btn-outline">
+          <Link to="/contact" className="btn btn-outline">
             Get In Touch
           </Link>
         </div>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,17 +20,17 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   const navLinks = [
-    { name: 'Home', to: 'hero' },
-    { name: 'About', to: 'about' },
-    { name: 'Skills', to: 'skills' },
-    { name: 'Projects', to: 'projects' },
-    { name: 'Contact', to: 'contact' },
+    { name: 'Home', to: '/' },
+    { name: 'About', to: '/about' },
+    { name: 'Skills', to: '/skills' },
+    { name: 'Projects', to: '/projects' },
+    { name: 'Contact', to: '/contact' },
   ];
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <Link to="hero" smooth={true} duration={500} className="logo">
+        <Link to="/" className="logo">
           &lt;Shiv /&gt;
         </Link>
 
@@ -38,10 +39,7 @@ const Navbar = () => {
             <Link
               key={index}
               to={link.to}
-              smooth={true}
-              duration={500}
-              offset={-70}
-              className="nav-link"
+              className={`nav-link ${location.pathname === link.to ? 'active' : ''}`}
               onClick={closeMenu}
             >
               {link.name}
