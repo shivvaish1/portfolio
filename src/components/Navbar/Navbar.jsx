@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
 
@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,30 +21,39 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   const navLinks = [
-    { name: 'Home', to: '/' },
-    { name: 'About', to: '/about' },
-    { name: 'Skills', to: '/skills' },
-    { name: 'Projects', to: '/projects' },
-    { name: 'Contact', to: '/contact' },
+    { name: 'Home', to: '/', sectionId: 'hero' },
+    { name: 'About', to: '/about', sectionId: 'about' },
+    { name: 'Skills', to: '/skills', sectionId: 'skills' },
+    { name: 'Projects', to: '/projects', sectionId: 'projects' },
+    { name: 'Contact', to: '/contact', sectionId: 'contact' },
   ];
+
+  const handleNavClick = (link) => {
+    closeMenu();
+    navigate(link.to);
+    const el = document.getElementById(link.sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <Link to="/" className="logo">
+        <span className="logo" onClick={() => handleNavClick(navLinks[0])} style={{ cursor: 'pointer' }}>
           &lt;Shiv /&gt;
-        </Link>
+        </span>
 
         <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
           {navLinks.map((link, index) => (
-            <Link
+            <span
               key={index}
-              to={link.to}
               className={`nav-link ${location.pathname === link.to ? 'active' : ''}`}
-              onClick={closeMenu}
+              onClick={() => handleNavClick(link)}
+              style={{ cursor: 'pointer' }}
             >
               {link.name}
-            </Link>
+            </span>
           ))}
         </div>
 
