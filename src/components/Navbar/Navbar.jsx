@@ -41,7 +41,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <span className="logo" onClick={() => handleNavClick(navLinks[0])} style={{ cursor: 'pointer' }}>
-          &lt;Shiv /&gt;
+          &lt;Shiv&gt;
         </span>
 
         <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
